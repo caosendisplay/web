@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import SEO from '../../components/SEO';
-import Layout from '../../layouts/index';
+import Layout from '../../components/Layout';
 
 const Testimonials = (props) => {
   const testimonials = props.data.allMarkdownRemark.edges;

@@ -1,15 +1,17 @@
 import React from 'react';
 import { graphql, withPrefix, Link } from 'gatsby';
 import Helmet from 'react-helmet';
+import { FormattedMessage } from 'react-intl';
 import SEO from '../components/SEO';
-import Layout from '../layouts/index';
+import Layout from '../components/Layout';
 import Call from '../components/Call';
 
 const Home = (props) => {
+  const locale = props.pageContext.locale;
   const markdown = props.data.allMarkdownRemark.edges;
   const json = props.data.allFeaturesJson.edges;
   return (
-    <Layout bodyClass="page-home">
+    <Layout bodyClass="page-home" locale={locale}>
       <SEO title="Home" />
       <Helmet>
         <meta
@@ -19,6 +21,7 @@ const Home = (props) => {
       </Helmet>
       <div className="intro pb-4">
         <div className="container">
+          <FormattedMessage id="title" />
           <h1>Serif - Gatsby Small Business Theme.</h1>
           <p>
             Multiple content types using Markdown and JSON sources. Responsive design and SCSS. This

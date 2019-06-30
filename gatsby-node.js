@@ -1,4 +1,5 @@
 const path = require('path');
+const locales = require('./src/constants/locales');
 
 // Create pages from markdown files
 exports.createPages = ({ graphql, actions }) => {
@@ -59,34 +60,40 @@ exports.createPages = ({ graphql, actions }) => {
           }
         `,
       ).then((result) => {
-        result.data.services.edges.forEach(({ node }) => {
-          const component = path.resolve('src/templates/service.js');
-          createPage({
-            path: node.frontmatter.path,
-            component,
-            context: {
-              id: node.id,
-            },
+        Object.keys(locales).map(lang => {
+          const pathPrefix = locales[lang].default ? '' : locales[lang].path;
+          result.data.services.edges.forEach(({ node }) => {
+            const component = path.resolve('src/templates/service.js');
+            createPage({
+              path: pathPrefix + node.frontmatter.path,
+              component,
+              context: {
+                locale: lang,
+                id: node.id,
+              },
+            });
           });
-        });
-        result.data.team.edges.forEach(({ node }) => {
-          const component = path.resolve('src/templates/team.js');
-          createPage({
-            path: node.frontmatter.path,
-            component,
-            context: {
-              id: node.id,
-            },
+          result.data.team.edges.forEach(({ node }) => {
+            const component = path.resolve('src/templates/team.js');
+            createPage({
+              path: pathPrefix + node.frontmatter.path,
+              component,
+              context: {
+                locale: lang,
+                id: node.id,
+              },
+            });
           });
-        });
-        result.data.testimonials.edges.forEach(({ node }) => {
-          const component = path.resolve('src/templates/testimonial.js');
-          createPage({
-            path: node.frontmatter.path,
-            component,
-            context: {
-              id: node.id,
-            },
+          result.data.testimonials.edges.forEach(({ node }) => {
+            const component = path.resolve('src/templates/testimonial.js');
+            createPage({
+              path: pathPrefix + node.frontmatter.path,
+              component,
+              context: {
+                locale: lang,
+                id: node.id,
+              },
+            });
           });
         });
         resolve();

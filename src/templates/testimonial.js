@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import Layout from '../layouts/index';
+import Layout from '../components/Layout';
 
 const Testimonial = ({ data }) => {
   const { markdownRemark } = data;
