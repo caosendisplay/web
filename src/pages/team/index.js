@@ -2,17 +2,20 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import SEO from '../../components/SEO';
 import Layout from '../../components/Layout';
+import { FormattedMessage } from 'react-intl';
 
 const Team = (props) => {
+  const locale = props.pageContext.locale;
   const teams = props.data.allMarkdownRemark.edges;
   return (
-    <Layout bodyClass="page-teams">
+    <Layout bodyClass="page-teams" locale={locale}>
       <SEO title="Team" />
+      <h1>{props.pageContext.locale}</h1>
       <div className="intro">
         <div className="container">
           <div className="row">
             <div className="col-12">
-              <h1>Meet The Team</h1>
+              <h1>Meet The <FormattedMessage id="Team" /></h1>
               <p>
                 Our team of qualified accountants and financial consultants can help your business
                 at any stage of it’s growth.

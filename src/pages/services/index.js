@@ -2,17 +2,22 @@ import React from 'react';
 import { Link, graphql } from 'gatsby';
 import SEO from '../../components/SEO';
 import Layout from '../../components/Layout';
+import { FormattedMessage } from 'react-intl';
 
 const Services = (props) => {
+  const locale = props.pageContext.locale;
   const services = props.data.allMarkdownRemark.edges;
   return (
-    <Layout bodyClass="page-services">
+    <Layout bodyClass="page-services" locale={locale}>
       <SEO title="Services" />
+      <h1>{props.pageContext.locale}</h1>
       <div className="intro">
         <div className="container">
           <div className="row">
             <div className="col-12">
-              <h1>Services</h1>
+              <h1>
+                <FormattedMessage id="Services" />
+              </h1>
             </div>
           </div>
         </div>

@@ -22,6 +22,7 @@ const Layout = props => {
         <div className={`page${props.bodyClass ? ` ${props.bodyClass}` : ''}`}>
           <div id="wrapper" className="wrapper">
             <Header />
+            <h1>{props.locale}</h1>
             {props.children}
           </div>
           <Footer />

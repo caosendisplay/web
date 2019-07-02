@@ -1,10 +1,10 @@
 module.exports = {
     en: {
-      path: 'en',
+      path: '',
       locale: 'English',
       default: true
     },
-    pt: {
+    zh: {
       path: 'zh',
       locale: '中文'
     }

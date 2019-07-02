@@ -5,7 +5,6 @@ import locales from '../../constants/locales'
 import { FormattedMessage } from 'react-intl';
 
 const Menu = (props) => {
-  // const locale = props.intl.locale;
   const { menuLinks } = props.data.site.siteMetadata;
   return (
     <div id="main-menu" className="main-menu">
@@ -21,11 +20,12 @@ const Menu = (props) => {
         ))}
         {Object.keys(locales).map(key => (
           <li key={key}>
-            <Link to={locales[key].path}>
+            <Link to={locales[key].default ? '/' : locales[key].path}>
               {locales[key].locale}
             </Link>
           </li>
         ))}
+        <li>{props.locale}</li>
       </ul>
     </div>
   );

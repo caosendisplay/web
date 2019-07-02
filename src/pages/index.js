@@ -19,9 +19,10 @@ const Home = (props) => {
           content="Small Business Theme. Multiple content types using Markdown and JSON sources. Responsive design and SCSS. This is a beautiful and artfully designed starting theme."
         />
       </Helmet>
+      <h1>{props.pageContext.locale}</h1>
       <div className="intro pb-4">
         <div className="container">
-          <FormattedMessage id="title" />
+          <FormattedMessage id="Title" />
           <h1>Serif - Gatsby Small Business Theme.</h1>
           <p>
             Multiple content types using Markdown and JSON sources. Responsive design and SCSS. This
