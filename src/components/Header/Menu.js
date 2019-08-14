@@ -11,9 +11,7 @@ const Menu = (props) => {
       <ul>
         {menuLinks.map(link => (
           <li key={link.name}>
-            <LocalizedLink
-              to={`/${link.link}`}
-            >
+            <LocalizedLink to={`/${link.link}`}>
               <FormattedMessage id={link.name}/>
             </LocalizedLink>
           </li>
@@ -26,7 +24,6 @@ const Menu = (props) => {
               </Link>
             </li>
           ))}
-        <li>{props.locale}</li>
       </ul>
     </div>
   );

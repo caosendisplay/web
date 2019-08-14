@@ -4,9 +4,10 @@ import SEO from '../../components/SEO';
 import Layout from '../../components/Layout';
 
 const Testimonials = (props) => {
+  const { locale } = props.pageContext;
   const testimonials = props.data.allMarkdownRemark.edges;
   return (
-    <Layout bodyClass="page-testimonials">
+    <Layout bodyClass="page-testimonials" locale={locale}>
       <SEO title="Testimonials"/>
       <div className="intro">
         <div className="container">

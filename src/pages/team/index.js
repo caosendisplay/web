@@ -10,7 +10,6 @@ const Team = (props) => {
   return (
     <Layout bodyClass="page-teams" locale={locale}>
       <SEO title="Team"/>
-      <h1>{props.pageContext.locale}</h1>
       <div className="intro">
         <div className="container">
           <div className="row">

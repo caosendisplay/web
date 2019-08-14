@@ -9,7 +9,6 @@ const Contact = (props) => {
   return (
     <Layout bodyClass="page-contact" locale={locale}>
       <SEO title="Contact"/>
-      <h1>{props.pageContext.locale}</h1>
       <div className="intro intro-small">
         <div className="container">
           <div className="row">
