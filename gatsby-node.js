@@ -2,29 +2,30 @@ const path = require('path');
 const locales = require('./src/constants/locales');
 
 exports.onCreatePage = ({ page, actions }) => {
-  const { createPage, deletePage } = actions
+  const { createPage, deletePage } = actions;
 
-  return new Promise(resolve => {
-    deletePage(page)
+  return new Promise((resolve) => {
+    deletePage(page);
 
-    Object.keys(locales).map(lang => {
-      const localizedPath = locales[lang].default
-      ? page.path
-      : locales[lang].path + page.path
+    Object.keys(locales)
+      .map((lang) => {
+        const localizedPath = locales[lang].default
+          ? page.path
+          : locales[lang].path + page.path;
 
-      return createPage({
-        ...page,
-        path: localizedPath,
-        context: {
-          ...page.context,
-          locale: lang
-        }
-      })
-    })
+        return createPage({
+          ...page,
+          path: localizedPath,
+          context: {
+            ...page.context,
+            locale: lang,
+          },
+        });
+      });
 
-    resolve()
-  })
-}
+    resolve();
+  });
+};
 
 // Create pages from markdown files
 // exports.createPages = ({ graphql, actions }) => {

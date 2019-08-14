@@ -2,10 +2,10 @@ import React from 'react';
 import { IntlProvider, addLocaleData } from 'react-intl';
 import zhData from 'react-intl/locale-data/zh';
 import enData from 'react-intl/locale-data/en';
-import SEO from './SEO';
 import Header from './Header/index';
 import Footer from './Footer';
 import SubFooter from './SubFooter';
+import { IntlReact } from './IntlReact';
 
 import en from '../i18n/en.json';
 import zh from '../i18n/zh.json';
@@ -20,7 +20,7 @@ addLocaleData([...enData, ...zhData]);
 const Layout = props => (
     <IntlProvider locale={props.locale} messages={messages[props.locale]}>
       <React.Fragment>
-        <SEO/>
+        <IntlReact/>
         <div className={`page${props.bodyClass ? ` ${props.bodyClass}` : ''}`}>
           <div id="wrapper" className="wrapper">
             <Header/>
