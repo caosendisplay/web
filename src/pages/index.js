@@ -7,12 +7,12 @@ import Layout from '../components/Layout';
 import Call from '../components/Call';
 
 const Home = (props) => {
-  const locale = props.pageContext.locale;
+  const { locale } = props.pageContext;
   const markdown = props.data.allMarkdownRemark.edges;
   const json = props.data.allFeaturesJson.edges;
   return (
     <Layout bodyClass="page-home" locale={locale}>
-      <SEO title="Home" />
+      <SEO title="Home"/>
       <Helmet>
         <meta
           name="description"
@@ -22,7 +22,7 @@ const Home = (props) => {
       <h1>{props.pageContext.locale}</h1>
       <div className="intro pb-4">
         <div className="container">
-          <FormattedMessage id="Title" />
+          <FormattedMessage id="Title"/>
           <h1>Serif - Gatsby Small Business Theme.</h1>
           <p>
             Multiple content types using Markdown and JSON sources. Responsive design and SCSS. This
@@ -32,7 +32,7 @@ const Home = (props) => {
       </div>
 
       <div className="container pt-2">
-        <Call button />
+        <Call button/>
       </div>
 
       <div className="container pt-8 pt-md-10">
@@ -70,7 +70,7 @@ const Home = (props) => {
               <div className="feature">
                 {edge.node.image && (
                   <div className="feature-image">
-                    <img src={withPrefix(edge.node.image)} />
+                    <img alt="" src={withPrefix(edge.node.image)}/>
                   </div>
                 )}
                 <h2 className="feature-title">{edge.node.title}</h2>
@@ -85,34 +85,34 @@ const Home = (props) => {
 };
 
 export const query = graphql`
-  query {
-    allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/services/" } }
-      sort: { fields: [frontmatter___date], order: DESC }
-    ) {
-      edges {
-        node {
-          id
-          frontmatter {
-            path
-            title
-            date(formatString: "DD MMMM YYYY")
-          }
-          excerpt
+    query {
+        allMarkdownRemark(
+            filter: { fileAbsolutePath: { regex: "/services/" } }
+            sort: { fields: [frontmatter___date], order: DESC }
+        ) {
+            edges {
+                node {
+                    id
+                    frontmatter {
+                        path
+                        title
+                        date(formatString: "DD MMMM YYYY")
+                    }
+                    excerpt
+                }
+            }
         }
-      }
-    }
-    allFeaturesJson {
-      edges {
-        node {
-          id
-          title
-          description
-          image
+        allFeaturesJson {
+            edges {
+                node {
+                    id
+                    title
+                    description
+                    image
+                }
+            }
         }
-      }
     }
-  }
 `;
 
 export default Home;

@@ -16,7 +16,11 @@ const SEO = props => (
           title={title}
           titleTemplate={`%s - ${data.site.siteMetadata.title}`}
           link={[
-            { rel: 'shortcut icon', type: 'image/png', href: `${favicon}` },
+            {
+              rel: 'shortcut icon',
+              type: 'image/png',
+              href: `${favicon}`,
+            },
           ]}
         />
       );
@@ -33,11 +37,11 @@ SEO.defaultProps = {
 export default SEO;
 
 const detailsQuery = graphql`
-  query DefaultSEOQuery {
-    site {
-      siteMetadata {
-        title
-      }
+    query DefaultSEOQuery {
+        site {
+            siteMetadata {
+                title
+            }
+        }
     }
-  }
 `;

@@ -1,21 +1,24 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import { FormattedMessage } from 'react-intl';
 import SEO from '../../components/SEO';
 import Layout from '../../components/Layout';
-import { FormattedMessage } from 'react-intl';
 
 const Team = (props) => {
-  const locale = props.pageContext.locale;
+  const { locale } = props.pageContext;
   const teams = props.data.allMarkdownRemark.edges;
   return (
     <Layout bodyClass="page-teams" locale={locale}>
-      <SEO title="Team" />
+      <SEO title="Team"/>
       <h1>{props.pageContext.locale}</h1>
       <div className="intro">
         <div className="container">
           <div className="row">
             <div className="col-12">
-              <h1>Meet The <FormattedMessage id="Team" /></h1>
+              <h1>
+                Meet The
+                <FormattedMessage id="Team"/>
+              </h1>
               <p>
                 Our team of qualified accountants and financial consultants can help your business
                 at any stage of it’s growth.
@@ -49,6 +52,7 @@ const Team = (props) => {
                         <strong>{edge.node.frontmatter.jobtitle}</strong>
                       </li>
                       <li>
+                        {/* eslint-disable-next-line react/jsx-no-target-blank */}
                         <a target="_blank" href={edge.node.frontmatter.linkedinurl}>
                           {edge.node.frontmatter.linkedinurl}
                         </a>
@@ -73,26 +77,26 @@ const Team = (props) => {
 };
 
 export const query = graphql`
-  query TeamQuery {
-    allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/team/" } }
-      sort: { fields: [frontmatter___date], order: DESC }
-    ) {
-      edges {
-        node {
-          html
-          frontmatter {
-            title
-            path
-            image
-            jobtitle
-            linkedinurl
-            email
-          }
+    query TeamQuery {
+        allMarkdownRemark(
+            filter: { fileAbsolutePath: { regex: "/team/" } }
+            sort: { fields: [frontmatter___date], order: DESC }
+        ) {
+            edges {
+                node {
+                    html
+                    frontmatter {
+                        title
+                        path
+                        image
+                        jobtitle
+                        linkedinurl
+                        email
+                    }
+                }
+            }
         }
-      }
     }
-  }
 `;
 
 export default Team;

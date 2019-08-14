@@ -1,8 +1,8 @@
 import React from 'react';
 import { graphql, StaticQuery, Link } from 'gatsby';
-import LocalizedLink from '../LocalizedLink'
-import locales from '../../constants/locales'
 import { FormattedMessage } from 'react-intl';
+import LocalizedLink from '../LocalizedLink';
+import locales from '../../constants/locales';
 
 const Menu = (props) => {
   const { menuLinks } = props.data.site.siteMetadata;
@@ -12,19 +12,20 @@ const Menu = (props) => {
         {menuLinks.map(link => (
           <li key={link.name}>
             <LocalizedLink
-              to={`/${link.link}`} 
+              to={`/${link.link}`}
             >
-              <FormattedMessage id={link.name} />
+              <FormattedMessage id={link.name}/>
             </LocalizedLink>
           </li>
         ))}
-        {Object.keys(locales).map(key => (
-          <li key={key}>
-            <Link to={locales[key].default ? '/' : locales[key].path}>
-              {locales[key].locale}
-            </Link>
-          </li>
-        ))}
+        {Object.keys(locales)
+          .map(key => (
+            <li key={key}>
+              <Link to={locales[key].default ? '/' : locales[key].path}>
+                {locales[key].locale}
+              </Link>
+            </li>
+          ))}
         <li>{props.locale}</li>
       </ul>
     </div>
@@ -45,6 +46,6 @@ export default props => (
         }
       }
     `}
-    render={data => <Menu data={data} />}
+    render={data => <Menu data={data}/>}
   />
 );

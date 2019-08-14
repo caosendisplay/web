@@ -7,7 +7,7 @@ const Testimonials = (props) => {
   const testimonials = props.data.allMarkdownRemark.edges;
   return (
     <Layout bodyClass="page-testimonials">
-      <SEO title="Testimonials" />
+      <SEO title="Testimonials"/>
       <div className="intro">
         <div className="container">
           <div className="row">
@@ -42,24 +42,24 @@ const Testimonials = (props) => {
 };
 
 export const query = graphql`
-  query TestimonialsQuery {
-    allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/testimonials/" } }
-      sort: { fields: [frontmatter___date], order: DESC }
-    ) {
-      edges {
-        node {
-          html
-          frontmatter {
-            title
-            path
-            name
-            jobtitle
-          }
+    query TestimonialsQuery {
+        allMarkdownRemark(
+            filter: { fileAbsolutePath: { regex: "/testimonials/" } }
+            sort: { fields: [frontmatter___date], order: DESC }
+        ) {
+            edges {
+                node {
+                    html
+                    frontmatter {
+                        title
+                        path
+                        name
+                        jobtitle
+                    }
+                }
+            }
         }
-      }
     }
-  }
 `;
 
 export default Testimonials;

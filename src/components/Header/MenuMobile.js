@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql, StaticQuery, Link } from 'gatsby';
 
-const MenuMobile = props => {
+const MenuMobile = (props) => {
   const { menuLinks } = props.data.site.siteMetadata;
   return (
     <div
@@ -33,6 +33,6 @@ export default props => (
         }
       }
     `}
-    render={data => <MenuMobile active={props.active} data={data} />}
+    render={data => <MenuMobile active={props.active} data={data}/>}
   />
 );

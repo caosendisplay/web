@@ -1,22 +1,22 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
+import { FormattedMessage } from 'react-intl';
 import SEO from '../../components/SEO';
 import Layout from '../../components/Layout';
-import { FormattedMessage } from 'react-intl';
 
 const Services = (props) => {
-  const locale = props.pageContext.locale;
+  const { locale } = props.pageContext;
   const services = props.data.allMarkdownRemark.edges;
   return (
     <Layout bodyClass="page-services" locale={locale}>
-      <SEO title="Services" />
+      <SEO title="Services"/>
       <h1>{props.pageContext.locale}</h1>
       <div className="intro">
         <div className="container">
           <div className="row">
             <div className="col-12">
               <h1>
-                <FormattedMessage id="Services" />
+                <FormattedMessage id="Services"/>
               </h1>
             </div>
           </div>
@@ -44,22 +44,22 @@ const Services = (props) => {
 };
 
 export const query = graphql`
-  query ServicesQuery {
-    allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/services/" } }
-      sort: { fields: [frontmatter___date], order: DESC }
-    ) {
-      edges {
-        node {
-          excerpt
-          frontmatter {
-            title
-            path
-          }
+    query ServicesQuery {
+        allMarkdownRemark(
+            filter: { fileAbsolutePath: { regex: "/services/" } }
+            sort: { fields: [frontmatter___date], order: DESC }
+        ) {
+            edges {
+                node {
+                    excerpt
+                    frontmatter {
+                        title
+                        path
+                    }
+                }
+            }
         }
-      }
     }
-  }
 `;
 
 export default Services;
