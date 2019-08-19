@@ -1,18 +1,28 @@
 import React from 'react';
-import { Link, graphql } from 'gatsby';
-import { FormattedMessage } from 'react-intl';
+import {Link, graphql} from 'gatsby';
+import {FormattedMessage} from 'react-intl';
 import SEO from '../../components/SEO';
 import Layout from '../../components/Layout';
 import formatMessage from '../../components/IntlReact';
 
 const Home = (props) => {
-  const { locale } = props.pageContext;
-  const solutions = props.data.allMarkdownRemark.edges;
+  const {locale} = props.pageContext;
+  const solutions = props.data.allMarkdownRemark.edges.filter(
+    edge => !edge.node.frontmatter.lang || edge.node.frontmatter.lang === locale,
+  );
   return (
     <Layout bodyClass="page-home" locale={locale}>
-      <SEO title={ formatMessage({ id: 'Home', defaultMessage: 'Home' }) } />
-      <FormattedMessage id="Services" />
-      <h1>{ formatMessage({ id: 'Home', defaultMessage: 'Home' }) }</h1>
+      <SEO title={formatMessage({id: 'Home', defaultMessage: 'Home'})}/>
+      <FormattedMessage id="Services"/>
+      <div className="container">
+        <div className="row">
+          {solutions.map(edge => (
+            <div className="col-12 col-md-4 mb-1">
+              <p>{edge.node.excerpt}</p>
+            </div>
+          ))}
+        </div>
+      </div>
     </Layout>
   );
 };
@@ -29,6 +39,7 @@ export const query = graphql`
                     frontmatter {
                         title
                         path
+                        lang
                     }
                 }
             }
