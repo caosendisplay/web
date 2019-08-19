@@ -1,6 +1,7 @@
 import React from 'react';
 import { graphql, StaticQuery, Link } from 'gatsby';
 import { FormattedMessage } from 'react-intl';
+import { Location } from '@reach/router';
 import LocalizedLink from '../LocalizedLink';
 import locales from '../../constants/locales';
 
@@ -19,9 +20,20 @@ const Menu = (props) => {
         {Object.keys(locales)
           .map(key => (
             <li key={key}>
-              <Link to={locales[key].default ? '/' : locales[key].path}>
-                {locales[key].locale}
-              </Link>
+              <Location>
+                {({ location }) => {
+                  let nonLocalePath = location.pathname;
+                  // eslint-disable-next-line array-callback-return
+                  Object.keys(locales).map((k) => {
+                    nonLocalePath = nonLocalePath.replace(`/${locales[k].path}/`, '/');
+                  });
+                  return (
+                    <Link to={locales[key].path + nonLocalePath}>
+                      {locales[key].locale}
+                    </Link>
+                  );
+                }}
+              </Location>
             </li>
           ))}
       </ul>
