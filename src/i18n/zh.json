@@ -1,8 +1,18 @@
 {
+    "CompanyName": "曹森展示",
+    "CompanyDescription": "圣诞节爱上大健康的全部进出口几把快结尾覅UC加快速度科技部水电费狂欢节会计师对符合 双方的会计核算的后就开始地方金黄色的发货",
+
+    "Contact": "联系我们",
+    "ContactPhone": "电话",
+    "ContactPhoneValue": "0512-55008666",
+    "ContactFax": "传真",
+    "ContactFaxValue": "0512-55009666",
+    "ContactEmail": "邮件",
+    "ContactEmailValue": "sz_gm@caosen.com",
+
     "Home": "Home-",
     "Title": "标题",
     "Services": "服务",
     "Team": "团队",
-    "Testimonials": "啥",
-    "Contact": "联系"
+    "Testimonials": "啥"
 }

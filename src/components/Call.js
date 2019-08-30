@@ -1,27 +1,45 @@
 import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
+import { FormattedMessage } from 'react-intl';
+import formatMessage from './IntlReact';
+import LocalizedLink from "./LocalizedLink";
 
 const Call = props => (
   <div className="call">
     <div className="call-box-top">
       <div className="call-phone">
-        <strong>Phone: </strong>
-        <a href={`tel:${props.data.site.siteMetadata.contact.phone}`}>
-          {props.data.site.siteMetadata.contact.phone}
+        <strong>
+          <FormattedMessage id="ContactPhone"/>
+          :&nbsp;
+        </strong>
+        <a href={`tel:${formatMessage({ id: 'ContactPhoneValue' })}`}>
+          <FormattedMessage id="ContactPhoneValue" />
+        </a>
+      </div>
+      <div className="call-fax">
+        <strong>
+          <FormattedMessage id="ContactFax"/>
+          :&nbsp;
+        </strong>
+        <a href={`tel:${formatMessage({ id: 'ContactFaxValue' })}`}>
+          <FormattedMessage id="ContactFaxValue" />
         </a>
       </div>
       <div className="call-email">
-        <strong>Email: </strong>
-        <a href={`mailto:${props.data.site.siteMetadata.contact.email}`}>
-          {props.data.site.siteMetadata.contact.email}
+        <strong>
+          <FormattedMessage id="ContactEmail" />
+          :&nbsp;
+        </strong>
+        <a href={`mailto:${formatMessage({ id: 'ContactEmailValue' })}`}>
+          <FormattedMessage id="ContactEmailValue" />
         </a>
       </div>
     </div>
     {props.button && (
       <div className="call-box-bottom">
-        <a href="/contact" className="button">
-          Contact
-        </a>
+        <LocalizedLink to="/contact" className="button">
+          <FormattedMessage id="Contact" />
+        </LocalizedLink>
       </div>
     )}
   </div>

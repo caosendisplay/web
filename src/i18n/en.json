@@ -1,8 +1,19 @@
 {
+
+    "CompanyName": "Caosen Display",
+    "CompanyDescription": "Lorem markdownum aequalis strigis. _Saetigeri iubeas_, vultu huic alvum nondum\nde obside ut laniavit arbor palmis, cum quin. Rupes vetat videndo, armigerae\ncrimen habet Priamum nec.",
+
+    "Contact": "Contact",
+    "ContactPhone": "Tel",
+    "ContactPhoneValue": "+86 0512-55008666",
+    "ContactFax": "Fax",
+    "ContactFaxValue": "+86 0512-55009666",
+    "ContactEmail": "Email",
+    "ContactEmailValue": "sz_gm@caosen.com",
+
     "Home": "Home",
     "Title": "Home",
     "Services": "Services-",
     "Team": "Team-",
-    "Testimonials": "Testimonials-",
-    "Contact": "Contact-"
+    "Testimonials": "Testimonials-"
 }
