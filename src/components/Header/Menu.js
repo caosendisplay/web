@@ -1,8 +1,8 @@
 import React from 'react';
 import { graphql, StaticQuery, Link } from 'gatsby';
 import { FormattedMessage } from 'react-intl';
-import LocalizedLink from '../LocalizedLink';
-import LocaleSwitch from '../LocaleSwitch';
+import LocalizedLink from '../i18n/LocalizedLink';
+import LocaleSwitch from '../i18n/LocaleSwitch';
 
 const Menu = (props) => {
   const { menuLinks } = props.data.site.siteMetadata;

@@ -1,9 +1,9 @@
 import React from 'react';
-import {Link, graphql} from 'gatsby';
-import {FormattedMessage} from 'react-intl';
+import { graphql } from 'gatsby';
+import { FormattedMessage } from 'react-intl';
 import SEO from '../../components/SEO';
 import Layout from '../../components/Layout';
-import formatMessage from '../../components/IntlReact';
+import formatMessage from '../../components/i18n/IntlReact';
 
 const Home = (props) => {
   const {locale} = props.pageContext;

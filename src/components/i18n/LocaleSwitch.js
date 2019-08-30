@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import { Location } from '@reach/router';
-import locales from '../constants/locales';
+import locales from '../../constants/locales';
 
 
 const LocaleSwitch = () => (

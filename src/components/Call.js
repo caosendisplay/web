@@ -1,8 +1,8 @@
 import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 import { FormattedMessage } from 'react-intl';
-import formatMessage from './IntlReact';
-import LocalizedLink from "./LocalizedLink";
+import formatMessage from './i18n/IntlReact';
+import LocalizedLink from "./i18n/LocalizedLink";
 
 const Call = props => (
   <div className="call">
