@@ -10,6 +10,9 @@
     "ContactFaxValue": "+86 0512-55009666",
     "ContactEmail": "Email",
     "ContactEmailValue": "sz_gm@caosen.com",
+    "ContactAddress": "Addr",
+    "ContactAddressValueLine1": "Road 385, Zhou Song Harbor Town",
+    "ContactAddressValueLine2": "Kunshan, JiangSu 215345, China",
 
     "Home": "Home",
     "Title": "Home",

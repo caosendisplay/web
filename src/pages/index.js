@@ -4,7 +4,7 @@ import Helmet from 'react-helmet';
 import { FormattedMessage } from 'react-intl';
 import SEO from '../components/SEO';
 import Layout from '../components/Layout';
-import Call from '../components/Call';
+import ContactBox from '../components/ContactBox';
 
 const Home = (props) => {
   const { locale } = props.pageContext;
@@ -31,7 +31,7 @@ const Home = (props) => {
       </div>
 
       <div className="container pt-2">
-        <Call button/>
+        <ContactBox button/>
       </div>
 
       <div className="container pt-8 pt-md-10">

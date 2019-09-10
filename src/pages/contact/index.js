@@ -2,7 +2,7 @@ import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import SEO from '../../components/SEO';
 import Layout from '../../components/Layout';
-import Call from '../../components/Call';
+import ContactBox from '../../components/ContactBox';
 
 const Contact = (props) => {
   const { locale } = props.pageContext;
@@ -23,7 +23,7 @@ const Contact = (props) => {
       <div className="container">
         <div className="row">
           <div className="col-12">
-            <Call button={false}/>
+            <ContactBox button={false} hasAddress/>
           </div>
           <div className="col-8">
             <h4 className="mt-4">Business Hours</h4>

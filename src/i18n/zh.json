@@ -9,6 +9,8 @@
     "ContactFaxValue": "0512-55009666",
     "ContactEmail": "邮件",
     "ContactEmailValue": "sz_gm@caosen.com",
+    "ContactAddress": "地址",
+    "ContactAddressValueLine1": "江苏省昆山市周市镇宋家港路385号",
 
     "Home": "Home-",
     "Title": "标题",
