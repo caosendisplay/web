@@ -26,48 +26,30 @@ const Contact = (props) => {
             <ContactBox button={false} hasAddress/>
           </div>
           <div className="col-8">
-            <h4 className="mt-4">Business Hours</h4>
+            <h4 className="mt-4">
+              <FormattedMessage id="ContactBusinessHours" />
+            </h4>
             <table className="table table-sm opening-hours-table">
               <tbody>
               <tr>
-                <td className="day font-weight-bold">Monday</td>
+                <td className="day font-weight-bold">
+                  <FormattedMessage id="Monday" />
+                  &nbsp;~&nbsp;
+                  <FormattedMessage id="Friday" />
+                </td>
                 <td className="opens">8:30am</td>
                 <td>-</td>
                 <td className="closes">5:00pm</td>
               </tr>
               <tr>
-                <td className="day font-weight-bold">Tuesday</td>
-                <td className="opens">8:30am</td>
-                <td>-</td>
-                <td className="closes">5:00pm</td>
-              </tr>
-              <tr>
-                <td className="day font-weight-bold">Wednesday</td>
-                <td className="opens">8:30am</td>
-                <td>-</td>
-                <td className="closes">5:00pm</td>
-              </tr>
-              <tr>
-                <td className="day font-weight-bold">Thursday</td>
-                <td className="opens">8:30am</td>
-                <td>-</td>
-                <td className="closes">5:00pm</td>
-              </tr>
-              <tr>
-                <td className="day font-weight-bold">Friday</td>
-                <td className="opens">8:30am</td>
-                <td>-</td>
-                <td className="closes">5:00pm</td>
-              </tr>
-              <tr>
-                <td className="day font-weight-bold">Saturday</td>
-                <td className="opens">Closed</td>
-                <td/>
-                <td className="closes"/>
-              </tr>
-              <tr>
-                <td className="day font-weight-bold">Sunday</td>
-                <td className="opens">Closed</td>
+                <td className="day font-weight-bold">
+                  <FormattedMessage id="Saturday" />
+                  &nbsp;~&nbsp;
+                  <FormattedMessage id="Sunday" />
+                </td>
+                <td className="opens">
+                  <FormattedMessage id="Closed" />
+                </td>
                 <td/>
                 <td className="closes"/>
               </tr>

@@ -1,7 +1,12 @@
 {
-
     "CompanyName": "Caosen Display",
     "CompanyDescription": "Lorem markdownum aequalis strigis. _Saetigeri iubeas_, vultu huic alvum nondum\nde obside ut laniavit arbor palmis, cum quin. Rupes vetat videndo, armigerae\ncrimen habet Priamum nec.",
+
+    "Home": "Home",
+    "Title": "Home",
+    "Services": "Services-",
+    "Team": "Team-",
+    "Testimonials": "Testimonials-",
 
     "Contact": "Contact",
     "ContactPhone": "Tel",
@@ -13,10 +18,11 @@
     "ContactAddress": "Addr",
     "ContactAddressValueLine1": "Road 385, Zhou Song Harbor Town",
     "ContactAddressValueLine2": "Kunshan, JiangSu 215345, China",
+    "ContactBusinessHours": "Business Hours",
 
-    "Home": "Home",
-    "Title": "Home",
-    "Services": "Services-",
-    "Team": "Team-",
-    "Testimonials": "Testimonials-"
+    "Monday": "Monday",
+    "Friday": "Friday",
+    "Saturday": "Saturday",
+    "Sunday": "Sunday",
+    "Closed": "Closed"
 }
